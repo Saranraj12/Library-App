@@ -1,0 +1,18 @@
+<div class="table-parent">
+<table class="styled-table" border="2px">
+    <caption>{{title-heading}}</caption>
+    <tr>
+        {{#each objectList as |objectHead|}}
+        <th>{{objectHead}}</th>
+        {{/each}}
+    </tr>
+
+    {{#each objectData as |data|}}
+    <tr class="active-row">
+        {{#each objectList as |objectHead|}}
+            <td>{{get data objectHead}}</td>
+        {{/each}}
+    </tr>
+    {{/each}}
+</table>
+</div>

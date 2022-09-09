@@ -1,0 +1,14 @@
+<form class="form-class pop-up" {{action "deletePublisher" true on="submit" }}>
+    <fieldset>
+        <h3 class="form-head">Delete Publisher</h3>
+
+        {{input id="publisherid" placeholder="Enter Publisher ID To Delete" required=true}}<br><br>
+        <br><br>
+        <span type="submit" class="btn" style="margin: 10px 20px;padding:10px 30px;width:40%;">Delete</span>
+        <span class="btn" {{action 'returnToPage'}} style="margin-left: 20px;padding: 10px 30px">Cancel</span><br><br>
+    </fieldset>
+</form>
+
+<div class="blur-div"></div>
+
+{{outlet}}

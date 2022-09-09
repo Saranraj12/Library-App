@@ -1,0 +1,47 @@
+<form class="form-class pop-up" {{action "updateBook" true on="submit" }}>
+    <fieldset>
+        <h3 class="form-head">Update Book</h3>
+
+        {{input id="booktitle" value=booktitle placeholder="Enter Book Title" required=true}}<br><br>
+        {{input type="number" value=bookprice id="bookprice" min="1" max="1000" placeholder="Enter the Book Price" required=true}}<br><br>
+        {{input id="edition" value=edition placeholder="Enter the Edition" required=true}}<br><br>
+        {{input id="authorname" value=author placeholder="Enter the Author's name" required=true}}<br><br>
+        {{!-- <div class="radio"> Category:
+            <table style="padding-left: 10px;width:40%;height:2em;">
+                <tr>
+                    {{input type="radio" id="general" name="category" class="hover-radio" required=true}}
+                    <label for="staff">General</label><br>
+                </tr>
+                <tr>
+                    {{input type="radio" id="story" name="category" class="hover-radio"}}
+                    <label for="publisher">Story</label><br>
+                </tr>
+                <tr>
+                    {{input type="radio" id="novel" name ="category" class="hover-radio"}}
+                    <label for="reader">Novel</label>
+                </tr>
+            </table>
+        </div><br><br> --}}
+        {{!-- <div class="radio" style="display:flex;flex-direction:column"> Category:
+          <div style="margin-left:60px">{{input type="radio" id="general" name="category" class="hover-radio" required=true}}
+          <label for="general">General</label><br></div>
+          <div style="margin-left:60px">{{input type="radio" id="story" name="category" class="hover-radio"}}
+          <label for="story">Story</label><br></div>
+          <div style="margin-left:60px">{{input type="radio" id="novel" name="category" class="hover-radio"}}
+          <label for="novel">Novel</label></div> --}}
+    {{!-- </div><br><br> --}}
+        {{input id="issueinfo" value=issueinfo placeholder="Enter the issues if you have any"}}<br><br>
+        {{input type="number" id="publisherid" value=pid min="101" max="199" placeholder="Type publisher ID" required=true}}<br><br>
+        {{input id="publishedyear" value=year placeholder="Type Published Year" required=true}}<br><br>
+        <button type="submit" class="btn">Update Book</button>
+        <button onclick={{action "backToHome"}} class="btn">Cancel</button>
+        <br>
+        <br>
+    </fieldset>
+</form>
+<div class="blur-div"></div>
+
+
+
+
+{{outlet}}

@@ -1,0 +1,48 @@
+<div>
+
+{{top-bar backToHome=(action 'backToHome') backToLogin=(action 'backToLogin')}}
+ <div class="staff-body">
+
+        <div class="table-data">
+            {{table-component list data title-heading=title-head}}
+
+            <div class="btn-div">
+                <div class="btn" {{action "showBooks" }}>Books Catalogue</div>
+                <div class="btn" {{action "toggleConditionForReserve" 'true'}}>Reserve Book</div>
+                <div class="btn" {{action "toggleConditionForReturn" 'true'}}>Return Book</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{{#if isReserve}}
+<form class="form-class pop-up" {{action "reserveBook" true on="submit" }}>
+    <fieldset>
+        <h3 class="form-head">Reserve Book</h3>
+        {{input id="isbn" placeholder="Enter Book ID To reserve" required=true  input=(action "validateBookId")}}<br><br>
+
+        <button id="btn-reserve" type="submit" class="btn btn-signup">Reserve Book</button>
+        <button class="btn btn-signup" {{action "toggleConditionForReserve" 'false'}}>Cancel</button>
+        <p id="result"></p>
+    </fieldset>
+</form>
+<div class="blur-div"></div>
+{{/if}}
+
+{{#if isReturn}}
+<form class="form-class pop-up" {{action "returnBook" true on="submit" }}>
+    <fieldset>
+        <h3 class="form-head">Return Book</h3>
+        {{input id="isbn" placeholder="Enter Book ID To return" required="true" input=(action "validateBookIdForReturn")}}<br><br>
+
+        <button id="btn-reserve" type="submit" class="btn btn-signup">Return Book</button>
+        <button class="btn btn-signup" {{action "toggleConditionForReturn" 'false'}}>Cancel</button>
+        <p id="result"></p>
+        <p id="showId"></p>
+    </fieldset>
+</form>
+<div class="blur-div"></div>
+{{/if}}
+
+{{outlet}}

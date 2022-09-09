@@ -1,0 +1,46 @@
+<div>
+    {{top-bar backToHome="backToHome" backToLogin="backToLogin"}}
+    <div class="staff-body">
+
+        <div class="table-data">
+            {{table-component list data title-heading=title-head}}
+
+            <div class="btn-div">
+                <div class="btn" {{action "showBooks" }}>Book Catalogue</div>
+                <div class="btn" {{action "showReaders" }}>Readers</div>
+                <div class="btn" {{action "showPublishers" }}>Publishers</div>
+                <div class="btn" {{action "showBannedReaders" }}>Banned Readers</div>
+                <div class="btn" {{action "showReport" }}>View Report</div>
+            </div>
+        </div>
+
+        {{#if isBooks}}
+
+        <button {{action 'add' }} class="btn btn-signup" style="margin-left:90px; margin-right:20px;">Add Book</button>
+        <button {{action 'update' "book" }}class="btn btn-signup" style="margin-right:20px;">Update Book</button>
+        <button {{action 'delete' "book" }}class="btn btn-signup" style="margin-right:20px;">Delete Book</button>
+
+        {{/if}}
+
+        {{#if isPublisher}}
+        <button class="btn btn-signup" {{action 'delete' "publisher"}}style="padding: 2px 4px;width:120px;margin-left:90px; margin-right:20px;">Delete Publisher</button>
+        {{/if}}
+
+        {{#if isUpdateBook}}
+        <form class="form-class pop-up" {{action "updatebook" true on="submit" }}>
+            <fieldset>
+                <h3 class="form-head">Update Book</h3>
+
+                {{input id="isbn" placeholder="Enter Book ID To Update" required=true}}<br><br>
+                <br><br>
+                <button type="submit" class="btn">Update Book</button>
+                <button class="btn" {{action 'returnToPage' }}>Cancel</button>
+                <br><br>
+            </fieldset>
+        </form>
+        <div class="blur-div"></div>
+{{/if}}
+
+    </div>
+</div>
+{{outlet}}

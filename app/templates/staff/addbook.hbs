@@ -1,0 +1,46 @@
+<form class="form-class pop-up" {{action "addBook" true on="submit" }}>
+    <fieldset>
+        <h3 class="form-head">Add Book</h3>
+
+        {{input id="booktitle" placeholder="Enter Book Title" required=true}}<br><br>
+        {{input type="number" id="bookprice" min="1" max="1000" placeholder="Enter the Book Price" required=true}}<br><br>
+        {{input id="edition" placeholder="Enter the Edition" required=true}}<br><br>
+        {{input id="authorname" placeholder="Enter the Author's name" required=true}}<br><br>
+        {{!-- <div class="radio"> Category:
+            <table style="padding-left: 10px;width:40%;height:2em;">
+                <tr>
+                    {{input type="radio" id="general" name="category" class="hover-radio" required=true}}
+                    <label for="staff">General</label><br>
+                </tr>
+                <tr>
+                    {{input type="radio" id="story" name="category" class="hover-radio"}}
+                    <label for="publisher">Story</label><br>
+                </tr>
+                <tr>
+                    {{input type="radio" id="novel" name ="category" class="hover-radio"}}
+                    <label for="reader">Novel</label>
+                </tr>
+            </table>
+        </div><br><br> --}}
+        <div class="radio" style="display:flex;flex-direction:column"> Category:
+          <div style="margin-left:60px">{{input type="radio" id="general" name="category" class="hover-radio" required=true}}
+          <label for="general">General</label><br></div>
+          <div style="margin-left:60px">{{input type="radio" id="story" name="category" class="hover-radio"}}
+          <label for="story">Story</label><br></div>
+          <div style="margin-left:60px">{{input type="radio" id="novel" name="category" class="hover-radio"}}
+          <label for="novel">Novel</label></div>
+    </div><br><br>
+        {{input id="issueinfo" placeholder="Enter the issues if you have any"}}<br><br>
+        {{input type="number" id="publisherid" min="101" max="199" placeholder="Type publisher ID" required=true}}<br><br>
+        {{input id="publishedyear" placeholder="Type Published Year" required=true}}<br><br><br><br>
+        <button type="submit" class="btn btn-signup">Add Book</button>
+        <button {{action 'backToHome'}} class="btn btn-signup">Cancel</button>
+        <br>
+        <br>
+    </fieldset>
+</form>
+
+
+<div class="blur-div"></div>
+
+{{outlet}}

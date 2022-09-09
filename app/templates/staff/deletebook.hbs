@@ -1,0 +1,15 @@
+<form class="form-class pop-up" {{action "deleteBook" true on="submit" }}>
+    <fieldset>
+        <h3 class="form-head">Delete Book</h3>
+
+        {{input id="isbn" placeholder="Enter Book ID" required=true}}<br><br>
+        <br><br>
+        <button type="submit" class="btn">Delete Book</button>
+        <button class="btn" {{action 'returnToPage'}}>Cancel</button>
+        <br><br>
+    </fieldset>
+</form>
+
+<div class="blur-div"></div>
+
+{{outlet}}
